@@ -15,7 +15,7 @@
 
   What is this app and what does it do:
 
-  This app is designed for a team manager who to quickly assemble a development team consisting of engineers and interns. It allows she/he to input each person with their position, name, email, etc, so that the manager can quickly view all relevant contact information in one location. 
+  This app is designed for a team manager who wants to quickly assemble a development team consisting of engineers and interns. It allows she/he to input each person with their position, name, email, etc, so that the manager can quickly view all relevant contact information in one location. There is not a deployed URL. Inquirer takes in the user's input, jest tests the functions used, and an HTML file is created at the root directory as the final product. 
 
   ## Installation
 
