@@ -1,7 +1,14 @@
-const inquirer = require("inquirer");
-const fs = require('fs');
-const generate = require('./src/generateHTML')
+// index.js that runs team-generator app, TWH, 7/8/21
 
+const inquirer = require("inquirer");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const generate = require('./src/generateHTML');
+const fs = require('fs');
+
+start();
 
 const start = () => {
     inquirer.prompt([
@@ -15,10 +22,7 @@ const start = () => {
         
         createTeam()
     })
-
 }
-
-start();
 
 // begins createTeam (after manager input)
 const createTeam = () => {
@@ -46,8 +50,16 @@ const createTeam = () => {
     })
   }
 
-
   
+
+
+
+
+
+
+
+
+
 // initializes file
 // function startTeamFile(data) {
  
