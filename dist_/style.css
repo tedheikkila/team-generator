@@ -8,12 +8,12 @@
 .jumbotron {
     text-align: center;
     background-color: rgb(36, 82, 167);
-    color: white
+    color: white;
+    border-bottom: solid 10px rgb(253, 183, 52);
 }
 
 .card-deck {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin:10%;
 }
 
 .card {
@@ -21,3 +21,23 @@
     background-color: rgb(248, 251, 255);
     box-shadow: 0 6px 5px 0 rgb(36, 82, 167), 0 6px 5px 0 rgb(36, 82, 167);
 }
+
+h4 {
+    background-color: rgb(253, 183, 52);
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* footer */
+.footer {
+    background-color: rgb(36, 82, 167);
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size:15px;
+    padding:10px;
+    border-top: solid 10px rgb(253, 183, 52);
+}
+
