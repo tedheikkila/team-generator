@@ -12,3 +12,5 @@ function generateHTML(myTeam) {
   module.exports = {
     generateHTML
   }
+
+  //need functions for engineer & intern positions (filter myTeam then pass back into template)

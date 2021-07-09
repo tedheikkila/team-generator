@@ -112,7 +112,7 @@ const writeTeamFile = (fileName, myTeam) => {
 
     console.log(fileName, myTeam)
 
-    fs.writeFileSync(path.join("dist", fileName), generate.generateHTML(myTeam), (err) => {
+    fs.writeFileSync(path.join("dist_", fileName), generate.generateHTML(myTeam), (err) => {
         if (err) console.log("err:", err);
     })
 }
