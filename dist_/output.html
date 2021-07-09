@@ -1,0 +1,71 @@
+<!--html team generator output to be used for inquirer-->
+<!--change this folder dist_ to dist at project completion-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!--google fonts link (work sans)-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet"/>
+    <!--custom css link-->
+    <link rel="stylesheet" href="style.css"/>
+    <title>My Dev Team</title>
+</head>
+
+<body>
+    <!--header (my dev team)-->
+    <header class="header-team">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <!--h1, p nested in bootstrap-->
+                <h1 class="display-3">My Dev Team</h1>
+                <p class="lead">team members w/personnel info</p>
+            </div>
+        </div>
+    </header>
+
+    <!--members (manager, engineers, interns)-->
+    <div class="card-deck">
+        <div class="card">
+          <div class="card-body">
+            <!--day1: temp, wind, hum-->
+            <h4 class="manager-title">Lacy</h4>
+            <p class = "manager-icon">Manager</p>
+            <p class="card-text">ID:<span class="manager-id">1</span></p>
+            <p class="card-text">Email:<span class="manager-email">test1@mail.com</span></p>
+            <p class="card-text">Office Number:<span class ="manager-office">1</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <!--day2-->
+            <h4 class="engineer-title">Ted</h4>
+            <p class ="engineer-icon">Engineer</p>
+            <p class="card-text">ID:<span class="engineer-id"></span>2</p>
+            <p class="card-text">Email:<span class="engineer-email">test2@mail.com</span></p>
+            <p class="card-text">GitHub:<span class ="engineer-github">tedheikkila</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <!--day3-->
+            <h4 class="intern-title">Sam</h4>
+            <p class ="intern-icon">Intern</p>
+            <p class="card-text">ID:<span class="intern-id"></span>3</p>
+            <p class="card-text">Email:<span class="intern-email">test3@mail.com</span></p>
+            <p class="card-text">School:<span class ="intern-school"></span>UMN</p>
+          </div>
+        </div>
+      </div>
+
+    <!--bootstrap (min and popper)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
