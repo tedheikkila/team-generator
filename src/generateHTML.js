@@ -1,7 +1,8 @@
 // generates HTML for dist output
-function generateHTML(data) {
+function generateHTML(myTeam) {
     return `
     
+    ${myTeam.name}
   
   
   `

@@ -9,8 +9,8 @@ const Intern = require("./lib/Intern");
 const generate = require('./src/generateHTML');
 const fs = require('fs');
 
-// global variable will hold the team itself
-let myTeam = new Team("My Dev Team");
+// global variable holds team (an object w/ an array of objects)
+let myTeam = new Team("My-Dev-Team");
 
 // launches app
 const start = () => {
@@ -21,10 +21,10 @@ const start = () => {
         { type: "input", message: "Enter in the office number:", name: "officeNumber" },
 
     ]).then( ({name, id, email, officeNumber}) => {
-        // instantiate new manager
+        // instantiates new manager
         const addedManager = new Manager(name, id, email, officeNumber)
     
-        // add manager to team
+        // adds manager to team
         myTeam.addToTeam(addedManager);
 
         createTeam()
@@ -64,10 +64,10 @@ const addEngineer = () => {
       { type: "input", message: "What's their GitHub username?", name: "gitHub" },
       
     ]).then( ({name, id, email, gitHub}) => {
-      // instantiate a new engineer
+      // instantiates new engineer
       const addedEngineer = new Engineer(name, id, email, gitHub)
   
-      // adds the engineer to the team
+      // adds engineer to team
       myTeam.addToTeam(addedEngineer);
   
       // goes back to createTeam
@@ -84,36 +84,32 @@ const addIntern = () => {
       { type: "input", message: "What's their current school?", name: "school" },
       
     ]).then( ({name, id, email, school}) => {
-      // instantiate a new intern
+      // instantiate new intern
       const addedIntern = new Intern(name, id, email, school)
   
-      // add the intern to the team
+      // adds intern to team
       myTeam.addToTeam(addedIntern);
   
-      // gooes back to createTeam
+      // goes back to createTeam
       createTeam();
     });
   }
 
-  //this invokes the src write file and passes in myTeam array of objects data?
-  const buildTeam = () => {
-      console.log(myTeam)
+// passes in myTeam array of objects and creates fileName for output HTML
+const buildTeam = () => {
+
+      const fileName = `${myTeam.name.toLowerCase()}.html`
+
+      writeTeamFile(fileName, myTeam)
 
   }
 
+// function to write html file
+const writeTeamFile = (fileName, myTeam) => {
 
-// initializes file
-// function startTeamFile(data) {
+    console.log(fileName, myTeam)
 
-//     const fileName = `${data.managerName.toLowerCase()}.html`
-
-//     writeTeamFile(fileName, data)
-// }
-
-// // function to write html file
-// function writeTeamFile(fileName, data) {
-
-//     fs.writeTeamFile(fileName, generate.generateHTML(data), (err) => {
-//         if(err) console.log("err:", err);
-//     })
-// }
+    fs.writeFile(fileName, generate.generateHTML(myTeam), (err) => {
+        if(err) console.log("err:", err);
+    })
+}
