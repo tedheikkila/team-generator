@@ -21,10 +21,10 @@ const start = () => {
         { type: "input", message: "Enter in their email address:", name: "email" },
         { type: "input", message: "Enter in the office number:", name: "officeNumber" },
 
-    ]).then( ({name, id, email, officeNumber}) => {
+    ]).then(({ name, id, email, officeNumber }) => {
         // instantiates new manager
         const addedManager = new Manager(name, id, email, officeNumber)
-    
+
         // adds manager to team
         myTeam.addToTeam(addedManager);
 
@@ -37,8 +37,10 @@ start();
 // begins createTeam (after manager finishes their input)
 const createTeam = () => {
     inquirer.prompt([
-        { type: "list", message: "Choose an option:", 
-        choices: ["Add Engineer", "Add Intern", "Finish & Build Team"], name: "createTeam" }
+        {
+            type: "list", message: "Choose an option:",
+            choices: ["Add Engineer", "Add Intern", "Finish & Build Team"], name: "createTeam"
+        }
     ]).then(data => {
         switch (data.createTeam) {
             case "Add Engineer":
@@ -59,51 +61,51 @@ const createTeam = () => {
 // displays prompts for engineer
 const addEngineer = () => {
     inquirer.prompt([
-      { type: "input", message: "What's the engineer's name?", name: "name" },
-      { type: "input", message: "What's their ID?", name: "id" },
-      { type: "input", message: "What's their email?", name: "email" },
-      { type: "input", message: "What's their GitHub username?", name: "gitHub" },
-      
-    ]).then( ({name, id, email, gitHub}) => {
-      // instantiates new engineer
-      const addedEngineer = new Engineer(name, id, email, gitHub)
-  
-      // adds engineer to team
-      myTeam.addToTeam(addedEngineer);
-  
-      // goes back to createTeam
-      createTeam();
-    });
-  }
+        { type: "input", message: "What's the engineer's name?", name: "name" },
+        { type: "input", message: "What's their ID?", name: "id" },
+        { type: "input", message: "What's their email?", name: "email" },
+        { type: "input", message: "What's their GitHub username?", name: "gitHub" },
 
-  // displays prompts for adding intern
+    ]).then(({ name, id, email, gitHub }) => {
+        // instantiates new engineer
+        const addedEngineer = new Engineer(name, id, email, gitHub)
+
+        // adds engineer to team
+        myTeam.addToTeam(addedEngineer);
+
+        // goes back to createTeam
+        createTeam();
+    });
+}
+
+// displays prompts for adding intern
 const addIntern = () => {
     inquirer.prompt([
-      { type: "input", message: "What's the intern's name?", name: "name" },
-      { type: "input", message: "What's their ID?", name: "id" },
-      { type: "input", message: "What's their email?", name: "email" },
-      { type: "input", message: "What's their current school?", name: "school" },
-      
-    ]).then( ({name, id, email, school}) => {
-      // instantiate new intern
-      const addedIntern = new Intern(name, id, email, school)
-  
-      // adds intern to team
-      myTeam.addToTeam(addedIntern);
-  
-      // goes back to createTeam
-      createTeam();
+        { type: "input", message: "What's the intern's name?", name: "name" },
+        { type: "input", message: "What's their ID?", name: "id" },
+        { type: "input", message: "What's their email?", name: "email" },
+        { type: "input", message: "What's their current school?", name: "school" },
+
+    ]).then(({ name, id, email, school }) => {
+        // instantiate new intern
+        const addedIntern = new Intern(name, id, email, school)
+
+        // adds intern to team
+        myTeam.addToTeam(addedIntern);
+
+        // goes back to createTeam
+        createTeam();
     });
-  }
+}
 
 // passes in myTeam array of objects and creates fileName for output HTML
 const buildTeam = () => {
 
-      const fileName = `${myTeam.name.toLowerCase()}.html`
+    const fileName = `${myTeam.name.toLowerCase()}.html`
 
-      writeTeamFile(fileName, myTeam)
+    writeTeamFile(fileName, myTeam)
 
-  }
+}
 
 // writes html file (specifies write path to dist and writes html using src template)
 const writeTeamFile = (fileName, myTeam) => {
@@ -111,6 +113,6 @@ const writeTeamFile = (fileName, myTeam) => {
     console.log(fileName, myTeam)
 
     fs.writeFileSync(path.join("dist", fileName), generate.generateHTML(myTeam), (err) => {
-        if(err) console.log("err:", err);
+        if (err) console.log("err:", err);
     })
 }
