@@ -8,6 +8,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const generate = require('./src/generateHTML');
 const fs = require('fs');
+const path = require('path')
 
 // global variable holds team (an object w/ an array of objects)
 let myTeam = new Team("My-Dev-Team");
@@ -104,12 +105,12 @@ const buildTeam = () => {
 
   }
 
-// function to write html file
+// writes html file (specifies write path to dist and writes html using src template)
 const writeTeamFile = (fileName, myTeam) => {
 
     console.log(fileName, myTeam)
 
-    fs.writeFile(fileName, generate.generateHTML(myTeam), (err) => {
+    fs.writeFileSync(path.join("dist", fileName), generate.generateHTML(myTeam), (err) => {
         if(err) console.log("err:", err);
     })
 }
