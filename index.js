@@ -10,15 +10,15 @@ const generate = require('./src/generateHTML');
 const fs = require('fs');
 
 // global variable will hold the team itself
-let myTeam = new Team("My new dev team");
+let myTeam = new Team("My Dev Team");
 
 // launches app
 const start = () => {
     inquirer.prompt([
-        { type: "input", message: "Enter in team manager's name:", name: "managerName" },
-        { type: "input", message: "Enter in team manager's employee ID:", name: "managerID" },
-        { type: "input", message: "Enter in team manager's email address:", name: "managerEmail" },
-        { type: "input", message: "Enter in office number:", name: "officeNumber" },
+        { type: "input", message: "Enter in team manager's name:", name: "name" },
+        { type: "input", message: "Enter in their employee ID:", name: "id" },
+        { type: "input", message: "Enter in their email address:", name: "email" },
+        { type: "input", message: "Enter in the office number:", name: "officeNumber" },
 
     ]).then( ({name, id, email, officeNumber}) => {
         // instantiate new manager
@@ -36,12 +36,8 @@ start();
 // begins createTeam (after manager finishes their input)
 const createTeam = () => {
     inquirer.prompt([
-        {
-            type: "list",
-            message: "Choose an option:",
-            choices: ["Add Engineer", "Add Intern", "Finish & Build Team"],
-            name: "createTeam"
-        }
+        { type: "list", message: "Choose an option:", 
+        choices: ["Add Engineer", "Add Intern", "Finish & Build Team"], name: "createTeam" }
     ]).then(data => {
         switch (data.createTeam) {
             case "Add Engineer":
@@ -101,6 +97,7 @@ const addIntern = () => {
 
   //this invokes the src write file and passes in myTeam array of objects data?
   const buildTeam = () => {
+      console.log(myTeam)
 
   }
 
