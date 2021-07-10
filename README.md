@@ -15,7 +15,7 @@
 
   What is this app and what does it do:
 
-  This app is designed for a team manager who wants to quickly assemble a development team consisting of engineers and interns. It allows the user to input each person with their position, name, email, and GitHub username for enginers or school name for interns, so that the manager can quickly view all relevant contact information in one location. This is done via node index.js command line. There is not a deployed URL. Inquirer takes in the user's input, jest tests the functions used, and an HTML file is created into the dist_ folder. 
+  This app is designed for a team manager who wants to quickly assemble a development team consisting of engineers and interns. It allows the user to input each person with their position, name, email, and GitHub username for enginers or school name for interns, so that the manager can quickly view all relevant contact information in one location. This is done via node index.js command line. There is not a deployed URL. Inquirer takes in the user's input, jest tests the functions used, and an HTML file is created into the dist_ folder (sample HTML located here). 
 
   Technologies used were: HTML, CSS, jQuery, Bootstrap, Javascript, Node, inquirer, jest, fs, path, markdown, and Git. Please render on Chrome for best results. 
 
@@ -49,4 +49,30 @@
 
   ## Screenshots
 
-  
+* npm run test
+
+![](./images/hw10-1.png)
+
+* node index.js command
+
+![](./images/hw10-2.png)
+
+* enter input into inquirer
+
+![](./images/hw10-3.png)
+
+* output full PC screen 
+
+![](./images/hw10-4.png)
+
+* interactive email feature
+
+![](./images/hw10-5.png)
+
+* output iPad screen
+
+![](./images/hw10-6.png)
+
+* output iPhone screen
+
+![](./images/hw10-7.png)
