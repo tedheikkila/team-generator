@@ -104,13 +104,10 @@ const buildTeam = () => {
     const fileName = `${myTeam.name.toLowerCase()}.html`
 
     writeTeamFile(fileName, myTeam)
-
 }
 
 // writes html file (specifies write path to dist and writes html using src template)
 const writeTeamFile = (fileName, myTeam) => {
-
-    console.log(fileName, myTeam)
 
     fs.writeFileSync(path.join("dist_", fileName), generate.generateHTML(myTeam), (err) => {
         if (err) console.log("err:", err);

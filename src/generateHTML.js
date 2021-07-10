@@ -7,7 +7,7 @@ function renderEngineers(myTeam) {
 
   for (let i = 0; i < filtered.length; i++) {
     let engineerCard = `
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="card">
         <div class="card-body">
           <h4 class="engineer-title">${filtered[i].name}</h4>
@@ -33,7 +33,7 @@ function renderInterns(myTeam) {
 
   for (let i = 0; i < filtered.length; i++) {
     let internCard = `
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="card">
         <div class="card-body">
           <h4 class="intern-title">${filtered[i].name}</h4>
@@ -82,7 +82,7 @@ function generateHTML(myTeam) {
     <!--members (manager, engineers, interns)-->
     <div class="card-deck">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="card">
             <div class="card-body">
               <!--manager-->
