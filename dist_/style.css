@@ -1,4 +1,4 @@
-/* css team generator styling */
+/* css team generator styling, TWH, 7/10/21 */
 
 * {
     box-sizing: border-box;
@@ -64,4 +64,3 @@ h4 {
     padding:10px;
     border-top: solid 10px rgb(253, 183, 52);
 }
-
