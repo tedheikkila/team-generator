@@ -1,5 +1,6 @@
 // index.js; runs team-generator app, TWH, 7/8/21
 
+// require in statements (note inquirer, fs, and path)
 const inquirer = require("inquirer");
 const Team = require("./lib/Team");
 const Employee = require("./lib/Employee");
@@ -22,7 +23,7 @@ const start = () => {
         { type: "input", message: "Enter in the office number:", name: "officeNumber" },
 
     ]).then(({ name, id, email, officeNumber }) => {
-        // instantiates new manager
+        // creates new manager
         const addedManager = new Manager(name, id, email, officeNumber)
 
         // adds manager to team
@@ -67,13 +68,13 @@ const addEngineer = () => {
         { type: "input", message: "What's their GitHub username?", name: "gitHub" },
 
     ]).then(({ name, id, email, gitHub }) => {
-        // instantiates new engineer
+        // creates new engineer
         const addedEngineer = new Engineer(name, id, email, gitHub)
 
         // adds engineer to team
         myTeam.addToTeam(addedEngineer);
 
-        // goes back to createTeam
+        // goes back to createTeam (aka home menu)
         createTeam();
     });
 }
@@ -87,18 +88,18 @@ const addIntern = () => {
         { type: "input", message: "What's their current school?", name: "school" },
 
     ]).then(({ name, id, email, school }) => {
-        // instantiate new intern
+        // creates new intern
         const addedIntern = new Intern(name, id, email, school)
 
         // adds intern to team
         myTeam.addToTeam(addedIntern);
 
-        // goes back to createTeam
+        // goes back to createTeam (aka home menu)
         createTeam();
     });
 }
 
-// passes in myTeam array of objects and creates fileName for output HTML
+// passes in myTeam and creates fileName for output HTML
 const buildTeam = () => {
 
     const fileName = `${myTeam.name.toLowerCase()}.html`

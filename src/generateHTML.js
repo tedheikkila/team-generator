@@ -1,5 +1,5 @@
 
-// engineer dynamic add fcns (filters & generates engr html)
+// engineer dynamic add fcns (filters myTeam & generates engr html)
 function renderEngineers(myTeam) {
   const filtered = myTeam.members.filter( employee => employee.position === "Engineer");
 
@@ -25,7 +25,7 @@ function renderEngineers(myTeam) {
   return engineerCards
 };
 
-// intern dynamic add fcns (filter myTeam for Interns)
+// intern dynamic add fcns (filter myTeam & generates intern html)
 function renderInterns(myTeam) {
   const filtered = myTeam.members.filter( employee => employee.position === "Intern");
 
@@ -51,7 +51,7 @@ function renderInterns(myTeam) {
   return internCards
 }
 
-// generates HTML for dist output
+// generates HTML for dist output (manager is embedded in)
 function generateHTML(myTeam) {
     return `
     <!DOCTYPE html>
@@ -119,6 +119,7 @@ function generateHTML(myTeam) {
   `
   }
 
+//exporting this fcn for fs to write html in dist
   module.exports = {
     generateHTML
   }

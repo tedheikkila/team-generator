@@ -9,9 +9,12 @@ describe('Team class', () => {
         it("should add employee to teamroster", () => {
             const teamroster = [];
             const team = new Team("Employee", teamroster)
-            const employee = {type:"employee"};
+            const employee = { type: "employee" };
             team.addToTeam(employee);
-        expect(teamroster) == {type:"employee"};
+            expect(teamroster) == { type: "employee" };
 
-        })})
+        })
+    })
 })
+
+// this test passes; expected() results in employee
