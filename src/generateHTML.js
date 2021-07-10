@@ -105,7 +105,7 @@ function generateHTML(myTeam) {
 
     <!--footer-->
     <footer class="footer">
-      <p class="copyrights">${myTeam.name} @ 2021</p>
+      <p class="copyrights">${myTeam.name} @ 2021: TWH</p>
     </footer>
 
     <!--jQuery (min)-->
