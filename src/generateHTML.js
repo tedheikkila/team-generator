@@ -7,14 +7,14 @@ function renderEngineers(myTeam) {
 
   for (let i = 0; i < filtered.length; i++) {
     let engineerCard = `
-     <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-md-6 col-lg-3">
       <div class="card">
         <div class="card-body">
           <h4 class="engineer-title">${filtered[i].name}</h4>
           <p class ="engineer-icon">${filtered[i].position}</p>
           <p class="card-text">ID: <span class="engineer-id">${filtered[i].id}</span></p>
           <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${filtered[i].email}">${filtered[i].email}</a></p>
-          <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${filtered[i].gitHub}" target="_blank">${filtered[i].gitHub}</a></span></p>
+          <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${filtered[i].gitHub}" target="_blank">${filtered[i].gitHub}</a>
         </div>
       </div> 
     </div>
@@ -108,6 +108,8 @@ function generateHTML(myTeam) {
       <p class="copyrights">${myTeam.name} @ 2021</p>
     </footer>
 
+    <!--jQuery (min)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--bootstrap (min and popper)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
