@@ -15,3 +15,41 @@ describe('Team class', () => {
 
         })})
 })
+
+
+
+// const Team = {
+//     name: 'My-Dev-Team', members: [
+//       Manager = {
+//         name: 'Ted',
+//         position: 'Manager',
+//         id: '1',
+//         email: 'ted',
+//         officeNumber: '1'
+//       },
+  
+//       Engineer = {
+//         name: 'Lacy',
+//         position: 'Engineer',
+//         id: '2',
+//         email: 'ted',
+//         gitHub: 'tedheikkila'
+//       },
+  
+//       Intern = {
+//         name: 'Sam',
+//         position: 'Intern',
+//         id: '3',
+//         email: 'ted',
+//         school: 'cambridge'
+//       },
+  
+//       Engineer = {
+//         name: 'Luke',
+//         position: 'Engineer',
+//         id: '4',
+//         email: 'ted',
+//         gitHub: 'teddy'
+//       }
+//     ]
+//   }
