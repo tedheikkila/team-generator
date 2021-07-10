@@ -1,13 +1,26 @@
+
 // engineer dynamic add fcns (filter myTeam for Engineers)
 function renderEngineers() {
   // console.log(Team)
   const filtered = Team.members.filter( employee => employee.position === "Engineer");
-  console.log(filtered)
+  // console.log(filtered)
 
+  for (let i = 0; i < filtered.length; i++) {
+    let engineerCard = `
+    <div class="card">
+      <div class="card-body">
+        <h4 class="engineer-title">${filtered[i].name}</h4>
+        <p class ="engineer-icon">${filtered[i].position}</p>
+        <p class="card-text">ID: <span class="engineer-id">${filtered[i].id}</span></p>
+        <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${filtered[i].email}">${filtered[i].email}</a></p>
+        <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${filtered[i].gitHub}" target="_blank">${filtered[i].gitHub}</a></span></p>
+      </div>
+    </div>
+    `
+    
+    console.log(engineerCard)
 
-
-
-
+  }
 
 };
 
@@ -99,10 +112,9 @@ function generateHTML(myTeam) {
       </div>
 
       ${renderEngineers()}
-
+    
       ${renderInterns()}
-
-   
+      
     </div>
 
     <!--footer-->
@@ -123,24 +135,25 @@ function generateHTML(myTeam) {
     generateHTML
   }
 
-//   <div class="card">
-//   <div class="card-body">
-//     <!--engineer-->
-//     <h4 class="engineer-title">${myTeam.members[1].name}</h4>
-//     <p class ="engineer-icon">${myTeam.members[1].position}</p>
-//     <p class="card-text">ID: <span class="engineer-id">${myTeam.members[1].id}</span></p>
-//     <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${myTeam.members[1].email}">${myTeam.members[1].email}</a></p>
-//     <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${myTeam.members[1].gitHub}" target="_blank">${myTeam.members[1].gitHub}</a></span></p>
-//   </div> 
-// </div>
-
-// <div class="card">
+//     <div class="card">
 //     <div class="card-body">
-//       <!--intern-->
-//       <h4 class="intern-title">${myTeam.members[2].name}</h4>
-//       <p class ="intern-icon">${myTeam.members[2].position}</p>
-//       <p class="card-text">ID: <span class="intern-id">${myTeam.members[2].id}</span></p>
-//       <p class="card-text"><span class="intern-email">Email: </span><a href="mailto:${myTeam.members[2].email}">${myTeam.members[2].email}</a></p>
-//       <p class="card-text">School: <span class ="intern-school"></span>${myTeam.members[2].school}</p>
-//     </div>
-//   </div>
+//     engineer
+  //     <h4 class="engineer-title">${myTeam.members[1].name}</h4>
+  //     <p class ="engineer-icon">${myTeam.members[1].position}</p>
+  //     <p class="card-text">ID: <span class="engineer-id">${myTeam.members[1].id}</span></p>
+  //     <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${myTeam.members[1].email}">${myTeam.members[1].email}</a></p>
+  //     <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${myTeam.members[1].gitHub}" target="_blank">${myTeam.members[1].gitHub}</a></span></p>
+//    </div> 
+//    </div>
+
+//     <div class="card">
+//     <div class="card-body">
+  //      intern
+  //      <h4 class="intern-title">${myTeam.members[2].name}</h4>
+  //      <p class ="intern-icon">${myTeam.members[2].position}</p>
+  //      <p class="card-text">ID: <span class="intern-id">${myTeam.members[2].id}</span></p>
+  //      <p class="card-text"><span class="intern-email">Email: </span><a href="mailto:${myTeam.members[2].email}">${myTeam.members[2].email}</a></p>
+  //      <p class="card-text">School: <span class ="intern-school"></span>${myTeam.members[2].school}</p>
+//      </div>
+//      </div>
+
