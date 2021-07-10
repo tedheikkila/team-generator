@@ -1,9 +1,59 @@
-// engineer dynamic add fcns (filter myTeam for Engieneers)
+// engineer dynamic add fcns (filter myTeam for Engineers)
+function renderEngineers() {
+  // console.log(Team)
+  const filtered = Team.members.filter( employee => employee.position === "Engineer");
+  console.log(filtered)
+
+
+
+
+
+
+};
+
+const Team = {
+  name: 'My-Dev-Team', members: [
+    Manager = {
+      name: 'Ted',
+      position: 'Manager',
+      id: '1',
+      email: 'ted',
+      officeNumber: '1'
+    },
+
+    Engineer = {
+      name: 'Lacy',
+      position: 'Engineer',
+      id: '2',
+      email: 'ted',
+      gitHub: 'tedheikkila'
+    },
+
+    Intern = {
+      name: 'Sam',
+      position: 'Intern',
+      id: '3',
+      email: 'ted',
+      school: 'cambridge'
+    },
+
+    Engineer = {
+      name: 'Luke',
+      position: 'Engineer',
+      id: '4',
+      email: 'ted',
+      gitHub: 'teddy'
+    }
+  ]
+}
+
+renderEngineers(Team)
 
 
 // intern dynamic add fcns (filter myTeam for Interns)
-
-
+// function renderInterns(myTeam) {
+//   console.log(myTeam)
+// }
 
 
 // generates HTML for dist output
@@ -48,28 +98,11 @@ function generateHTML(myTeam) {
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-body">
-          <!--engineer-->
-          <h4 class="engineer-title">${myTeam.members[1].name}</h4>
-          <p class ="engineer-icon">${myTeam.members[1].position}</p>
-          <p class="card-text">ID: <span class="engineer-id">${myTeam.members[1].id}</span></p>
-          <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${myTeam.members[1].email}">${myTeam.members[1].email}</a></p>
-          <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${myTeam.members[1].gitHub}" target="_blank">${myTeam.members[1].gitHub}</a></span></p>
-        </div> 
-      </div>
+      ${renderEngineers()}
 
-      <div class="card">
-          <div class="card-body">
-            <!--intern-->
-            <h4 class="intern-title">${myTeam.members[2].name}</h4>
-            <p class ="intern-icon">${myTeam.members[2].position}</p>
-            <p class="card-text">ID: <span class="intern-id">${myTeam.members[2].id}</span></p>
-            <p class="card-text"><span class="intern-email">Email: </span><a href="mailto:${myTeam.members[2].email}">${myTeam.members[2].email}</a></p>
-            <p class="card-text">School: <span class ="intern-school"></span>${myTeam.members[2].school}</p>
-          </div>
-        </div>
+      ${renderInterns()}
 
+   
     </div>
 
     <!--footer-->
@@ -86,8 +119,28 @@ function generateHTML(myTeam) {
   `
   }
 
-
-  
   module.exports = {
     generateHTML
   }
+
+//   <div class="card">
+//   <div class="card-body">
+//     <!--engineer-->
+//     <h4 class="engineer-title">${myTeam.members[1].name}</h4>
+//     <p class ="engineer-icon">${myTeam.members[1].position}</p>
+//     <p class="card-text">ID: <span class="engineer-id">${myTeam.members[1].id}</span></p>
+//     <p class="card-text"><span class="engineer-email">Email: </span><a href="mailto:${myTeam.members[1].email}">${myTeam.members[1].email}</a></p>
+//     <span class="card-text">GitHub: </span><a class ="engineer-github" href="https://github.com/${myTeam.members[1].gitHub}" target="_blank">${myTeam.members[1].gitHub}</a></span></p>
+//   </div> 
+// </div>
+
+// <div class="card">
+//     <div class="card-body">
+//       <!--intern-->
+//       <h4 class="intern-title">${myTeam.members[2].name}</h4>
+//       <p class ="intern-icon">${myTeam.members[2].position}</p>
+//       <p class="card-text">ID: <span class="intern-id">${myTeam.members[2].id}</span></p>
+//       <p class="card-text"><span class="intern-email">Email: </span><a href="mailto:${myTeam.members[2].email}">${myTeam.members[2].email}</a></p>
+//       <p class="card-text">School: <span class ="intern-school"></span>${myTeam.members[2].school}</p>
+//     </div>
+//   </div>
